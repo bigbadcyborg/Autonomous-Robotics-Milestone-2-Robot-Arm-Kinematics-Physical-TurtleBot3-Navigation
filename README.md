@@ -252,4 +252,36 @@ This final part demonstrates autonomous navigation using the map you created.
 * **Show Success:** The video must clearly show the planned path in RViz and the physical robot safely following the path to arrive at both destinations.
 
 ---
+### Appendix
 
+**[Optional] Nvidia Jeston NX SD Card Setup**
+
+(This SD card preparation step for Jetson NX was already completed by the IA for you. You will receive a flashed, ready-to-go micro SD card for Turtlebot3 operation. However, if your SD card is corrupted, it would be faster to download and reflash the SD card image yourself using step 0.)
+
+**Reflashing the micro SD card**
+
+Download the premade image from the following link:
+
+[https://drive.google.com/drive/folders/1ZuDb6T-RKJoFaYydzQ9XIYw8WizY3N7Y?usp=sharing](https://drive.google.com/drive/folders/1ZuDb6T-RKJoFaYydzQ9XIYw8WizY3N7Y?usp=sharing)
+
+After downloading the image file, you should see the compressed image file.
+
+Expand the zip file, and you should have "sd-blob.img".
+
+There are several ways to burn the image to an SD card. You can use Raspberry Pi Imager or Ubuntu's Disks utility to write the image to an SD card. The Raspberry Pi Imager can be downloaded here:
+
+[https://www.raspberrypi.org/software](https://www.raspberrypi.org/software)
+
+In Raspberry Pi Imager, please choose "Use custom" and select "sd-blob.img".
+
+The following is the sudo user name and password for the sd card image provided.
+
+```text
+User: nvidia 
+Password: nvidia
+
+```
+
+Please change the password after receiving your group’s micro SD card.
+
+Please do not run `sudo apt-get upgrade` on the Nvidia Jetson. That process is not reversible, and the SD card needs to be reflashed.
