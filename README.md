@@ -25,7 +25,7 @@ For all questions regarding milestone assignments and the robot, you should cont
 
 ### Assignment Requirement
 
-A hardware video demonstration submission is required for Milestone Assignment 2. You need to demonstrate that you have a working setup and can operate a physical turtlebot by making a video. Refer to the demo requirement section at the end of the milestone assignment on what to include in the video. Once your group is done with the video demonstration that satisfies the demo requirement outlined at the end, please submit it to Canvas. Each group will submit one video. Rules for robot usage will apply for working with the physical Turtlebot3. Please refer to the inventory list given to you separately.
+A hardware video demonstration submission is required for Milestone Assignment 2. You need to demonstrate that you have a working setup and can operate a physical turtlebot by making a video. Refer to the demo requirement section at the end of the milestone assignment on what to include in the video. Once your group is done with the video demonstration that satisfies the demo requirement outlined at the end, please submit it to Canvas. Only one member from each group will submit all videos necessary to demonstrate that your group has completed all requirements. Rules for robot usage will apply for working with the physical Turtlebot3. Please refer to the inventory list given to you separately and the rules for the Robot room usage.
 
 > **Change Log**
 > v1.0: Tested on Humble environment
@@ -224,7 +224,7 @@ We will leave you this URL again as a reference for the complete set of navigati
 
 ### Video Demo Requirements (3-Minute Demonstration)
 
-Your group will submit a single or multiple videos (e.g., MP4 format) to demonstrate your progress. One member should narrate the video, explaining each step. One group member should narrate the video, explaining each step as it's performed. At the beginning of the first video clip, please show every group member's face and state the names of all group members.
+Your group will submit a single or multiple videos (e.g., MP4 format) to demonstrate your progress. One group member should narrate the video, explaining each step as it's performed. At the beginning of the first video clip, please show every group member's face and state the names of all group members.
 
 For the physical robot sections (Parts B and C), your video must show both your computer screen (RViz, terminals) and the physical robot's movement simultaneously. 
 
