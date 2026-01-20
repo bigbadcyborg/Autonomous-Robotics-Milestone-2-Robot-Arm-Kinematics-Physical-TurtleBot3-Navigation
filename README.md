@@ -1,6 +1,6 @@
 # 2026 CS 4379K / CS 5342 Introduction to Autonomous Robotics, Robotics and Autonomous Systems
 
-## Programming Assignment: Milestone 2 (V1.1)
+## Programming Assignment: Milestone 2 (V1.0)
 
 **Minhyuk Park and Tsz-Chiu Au**
 
@@ -19,19 +19,22 @@ You might find the official tutorial on ROS 2 Humble useful in this course:
 
 [https://docs.ros.org/en/humble/Tutorials.html](https://docs.ros.org/en/humble/Tutorials.html)
 
+For all questions regarding milestone assignments and the robot, you should contact the Doctoral Instructor Assistant via direct message on Slack. Please do not contact the Instructor with questions regarding the milestone assignments. Also, the Instructor and the Doctoral Instructor Assistant will not respond to emails or other communication methods other than Slack. This is the URL for Slack for this course. 
+
+<https://spring2026txstrobot.slack.com/>
+
 ### Assignment Requirement
 
 A hardware video demonstration submission is required for Milestone Assignment 2. You need to demonstrate that you have a working setup and can operate a physical turtlebot by making a video. Refer to the demo requirement section at the end of the milestone assignment on what to include in the video. Once your group is done with the video demonstration that satisfies the demo requirement outlined at the end, please submit it to Canvas. Each group will submit one video. Rules for robot usage will apply for working with the physical Turtlebot3. Please refer to the inventory list given to you separately.
 
 > **Change Log**
-> v1.0 -> v1.1: Tested on Humble environment
-> v0.9 -> v1.0: Clarified troubleshooting steps regarding Jetson’s boot sequence
+> v1.0: Tested on Humble environment
 
 ---
 
 ### Part 1: Simulation of the Robotic Arm
 
-For part 1, we need you to further demonstrate your simulated environment with the operation of a robotic manipulator in the Gazebo simulated environment. This assumes that you have a working setup from Milestone Assignment 1 Part 1.
+For part 1, we need you to further demonstrate your simulated environment with the operation of a robotic manipulator in the Gazebo simulated environment. This assumes that you have a working setup from Milestone Assignment 1 Part 1. Please execute all instructions with [Remote PC] on Docker shell. Note that you have to enable GUI and start the Docker container by following instruction from Milestone Assignment 1. 
 
 **How to run an Open Manipulator X Arm simulation using RViz**
 
@@ -65,7 +68,9 @@ For part 2, we need you to demonstrate your ability to interface with the Physic
 
 If you suspect Jetson is not booting up, try reseating the SD card extender on the Nvidia Jetson and put the power jack back in to reboot the Jetson. Otherwise, you can try to bypass SD card extender and directly insert the SD card into the Jetson.
 
-Refer to the appendix for steps to reflash the SD card if it is corrupt.
+Please note that we will not use a Docker environment on Jetson NX to minimize overhead. Execute all instructions tagged with [Turetlebot Jetson] on the Jetson NX terminal window directly.
+
+Refer to the appendix for steps to reflash the SD card if it is corrupt. You can also ask the DIA for assistance in reflashing the SD card.
 
 **Jetson sudo**
 
@@ -219,9 +224,12 @@ We will leave you this URL again as a reference for the complete set of navigati
 
 ### Video Demo Requirements (3-Minute Demonstration)
 
-Your group will submit a single, continuous screen-recorded video (e.g., MP4 format) that is approximately three minutes long. One member should narrate the video, explaining each step. Please state the names of all group members at the beginning.
+Your group will submit a single or multiple videos (e.g., MP4 format) to demonstrate your progress. One member should narrate the video, explaining each step. One group member should narrate the video, explaining each step as it's performed. At the beginning of the first video clip, please show every group member's face and state the names of all group members.
 
-For the physical robot sections (Parts B and C), your video must show both your computer screen (RViz, terminals) and the physical robot's movement simultaneously. A picture-in-picture format, using a phone camera or webcam to show the robot, is highly recommended.
+For the physical robot sections (Parts B and C), your video must show both your computer screen (RViz, terminals) and the physical robot's movement simultaneously. 
+
+You do not need to edit the videos, and uploading raw videos will suffice. You can split the video into multiple videos and submit them separately if the video is too long.  
+The demonstration must clearly show the successful completion of the following four parts in order. 
 
 **Part A: Manipulator Control in RViz**
 This part demonstrates your ability to control the simulated manipulator arm using MoveIt and RViz.
