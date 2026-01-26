@@ -57,7 +57,7 @@ Rules for robot usage will apply for working with the physical Turtlebot3. Pleas
 
 ### Part 1: Simulation of the Robotic Arm
 
-For part 1, we need you to further demonstrate your simulated environment with the operation of a robotic manipulator in the Gazebo simulated environment. This assumes that you have a working setup from Milestone Assignment 1 Part 1. Please execute all instructions with [Remote PC] on Docker shell. Note that you have to enable GUI and start the Docker container by following instruction from Milestone Assignment 1. 
+For part 1, we need you to further demonstrate your simulated environment with the operation of a robotic manipulator in the Gazebo simulated environment. This assumes that you have a working setup from Milestone Assignment 1 Part 1. Please execute all instructions with **[Remote PC]** on Docker shell. Note that you have to enable GUI and start the Docker container by following instruction from Milestone Assignment 1. 
 
 **How to run an Open Manipulator X Arm simulation using RViz**
 
@@ -65,16 +65,16 @@ This tutorial is based on the following manual. Select Humble for the manual spe
 
 * **(Original URL)** [https://emanual.robotis.com/docs/en/platform/turtlebot3/manipulation/](https://emanual.robotis.com/docs/en/platform/turtlebot3/manipulation/)
 
-[Remote PC] To use MoveIt to operate the OpenMANIPULATOR-X in the Gazebo, terminate other Gazebo and RViz tools first.
+**[Remote PC]** To use MoveIt to operate the OpenMANIPULATOR-X in the Gazebo, terminate other Gazebo and RViz tools first.
 
-[Remote PC] Enter the command below to launch RViz with MoveIt configuration.
+**[Remote PC]** Enter the command below to launch RViz with MoveIt configuration.
 
 ```bash
 ros2 launch turtlebot3_manipulation_moveit_config moveit_gazebo.launch.py
 
 ```
 
-[Remote PC] The MoveIt Interface on RViz will be launched along with the Gazebo simulator. You can move the blue ball to move the location of the gripper in 3d space and click Plan and Execute under motionPlanning -> Planning -> Commands. Play around with parameters such as planning time.
+**[Remote PC]** The MoveIt Interface on RViz will be launched along with the Gazebo simulator. You can move the blue ball to move the location of the gripper in 3d space and click Plan and Execute under motionPlanning -> Planning -> Commands. Play around with parameters such as planning time.
 
 ---
 
@@ -111,9 +111,9 @@ This manual is based on the following manual for Humble.
 
 This manual assumes you have completed Milestone 1 Part 1 on setting up your remote PC.
 
-[Turtlebot Jetson][Remote PC]  Make sure Jetson is connected to the small router we provided (small_blue_wifi), along with the remote PC (NUC or PC that you configured for milestone assignment 1), so that they stay on the same local network. You should also sync the time for both the remote PC and nvidia Jetson by going through Ubuntu settings.
+**[Turtlebot Jetson]****[Remote PC]**  Make sure Jetson is connected to the small router we provided (small_blue_wifi), along with the remote PC (NUC or PC that you configured for milestone assignment 1), so that they stay on the same local network. You should also sync the time for both the remote PC and nvidia Jetson by going through Ubuntu settings.
 
-[Turtlebot Jetson] The following command will bring up the actual TurtleBot3 hardware with OpenMANIPULATOR-X on it. Open a terminal from the TurtleBot3 SBC.
+**[Turtlebot Jetson]** The following command will bring up the actual TurtleBot3 hardware with OpenMANIPULATOR-X on it. Open a terminal from the TurtleBot3 SBC.
 
 Bring up the TurtleBot3 Manipulation using the following command.
 
@@ -122,14 +122,14 @@ ros2 launch turtlebot3_manipulation_bringup hardware.launch.py
 
 ```
 
-[Remote PC] Enter the command below to launch MoveIt on RViz.
+**[Remote PC]** Enter the command below to launch MoveIt on RViz.
 
 ```bash
 ros2 launch turtlebot3_manipulation_moveit_config moveit_core.launch.py
 
 ```
 
-[Remote PC] To operate the robot with the keyboard teleoperation node, the RViz must be terminated. Then launch the servo server node and teleoperation nodes on a separate terminal window.
+**[Remote PC]** To operate the robot with the keyboard teleoperation node, the RViz must be terminated. Then launch the servo server node and teleoperation nodes on a separate terminal window.
 
 ```bash
 ros2 launch turtlebot3_manipulation_moveit_config servo.launch.py
@@ -140,11 +140,23 @@ ros2 run turtlebot3_manipulation_teleop turtlebot3_manipulation_teleop
 The following keys are used to control the TurtleBot3. Try moving the turtlebot in the physical space. Use O, K, L, ; keys to drive the TurtleBot3 platform.
 
 ```text
-Use o|k|l|; keys to move turtlebot base and use 'space' key to stop the base
-Use s|x|z|c|a|d|f|v keys to Cartesian jog
-Use 1|2|3|4|q|w|e|r keys to joint jog.
-'ESC' to quit.
-
+    Reading from keyboard
+    ---------------------------
+    Joint Control Keys:
+      1/q: Joint1 +/-
+      2/w: Joint2 +/-
+      3/e: Joint3 +/-
+      4/r: Joint4 +/-
+    Use o|p to open/close the gripper.
+    
+    Command Control Keys:
+      i: Move up
+      k: Move down
+      l: Move right
+      j: Move left
+      space bar: Move stop
+    ---------------------------
+    'ESC' to quit.
 ```
 
 #### SLAM
@@ -159,7 +171,7 @@ Note: This earlier section of the manual provides a better overview of SLAM. You
 
 Close all terminals on the remote PC if you are coming from previous sections.
 
-[Turtlebot Jetson] The following command will bring up the actual TurtleBot3 hardware with OpenMANIPULATOR-X on it. Open a terminal from the TurtleBot3 SBC.
+**[Turtlebot Jetson]** The following command will bring up the actual TurtleBot3 hardware with OpenMANIPULATOR-X on it. Open a terminal from the TurtleBot3 SBC.
 
 Bring up the TurtleBot3 Manipulation using the following command. Skip this step if you are coming from the previous section and your bringup is already running.
 
@@ -168,21 +180,21 @@ ros2 launch turtlebot3_manipulation_bringup hardware.launch.py
 
 ```
 
-[Remote PC] Open a terminal on Remote PC. Launch the slam node using the following command.
+**[Remote PC]** Open a terminal on Remote PC. Launch the slam node using the following command.
 
 ```bash
 ros2 launch turtlebot3_manipulation_bringup gazebo.launch.py
 
 ```
 
-[Remote PC] Launch the slam node using the following command.
+**[Remote PC]** Launch the slam node using the following command.
 
 ```bash
 ros2 launch turtlebot3_manipulation_cartographer cartographer.launch.py
 
 ```
 
-[Remote PC] Open two terminals on Remote PC. Launch the servo server node. Launch the keyboard teleoperation node. Use O, K, L, ; keys to drive the TurtleBot3 platform to create a good “map” of the environment.
+**[Remote PC]** Open two terminals on Remote PC. Launch the servo server node. Launch the keyboard teleoperation node. Use O, K, L, ; keys to drive the TurtleBot3 platform to create a good “map” of the environment.
 
 ```bash
 ros2 launch turtlebot3_manipulation_moveit_config servo.launch.py
@@ -190,14 +202,14 @@ ros2 run turtlebot3_manipulation_teleop turtlebot3_manipulation_teleop
 
 ```
 
-[Remote PC] Open a new terminal on Remote PC. Run the nav2_map_server to save the current map on RViz.
+**[Remote PC]** Open a new terminal on Remote PC. Run the nav2_map_server to save the current map on RViz.
 
 ```bash
 ros2 run nav2_map_server map_saver_cli -f ~/map
 
 ```
 
-[Remote PC] Refer to the previous assignment’s tuning guide to tune your map, should you find it necessary while performing steps on navigation.
+**[Remote PC]** Refer to the previous assignment’s tuning guide to tune your map, should you find it necessary while performing steps on navigation.
 
 #### Navigation
 
@@ -211,7 +223,7 @@ Note: Simulation for vanilla turtlebot 3 and turtlebot 3 with manipulator arm th
 
 Close all terminals on the remote PC if you are coming from previous sections.
 
-[Turtlebot Jetson] The following command will bring up the actual TurtleBot3 hardware with OpenMANIPULATOR-X on it. Open a terminal from the TurtleBot3 SBC.
+**[Turtlebot Jetson]** The following command will bring up the actual TurtleBot3 hardware with OpenMANIPULATOR-X on it. Open a terminal from the TurtleBot3 SBC.
 
 Bring up the TurtleBot3 Manipulation using the following command. Skip this step if you are coming from the previous section and your bringup is already running.
 
@@ -220,7 +232,7 @@ ros2 launch turtlebot3_manipulation_bringup hardware.launch.py
 
 ```
 
-[Remote PC] Open a terminal on Remote PC. Launch the navigation file using the following command. Note that you are referring to the map.yaml file created in the previous step for SLAM.
+**[Remote PC]** Open a terminal on Remote PC. Launch the navigation file using the following command. Note that you are referring to the map.yaml file created in the previous step for SLAM.
 
 ```bash
 ros2 launch turtlebot3_manipulation_navigation2 navigation2.launch.py map_yaml_file:=$HOME/map.yaml
