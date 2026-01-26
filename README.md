@@ -6,7 +6,7 @@
 
 ### Introduction
 
-Welcome to CS 4379K / CS 5342. We have prepared a few milestones before the final project, in which you will use a physical robot to execute a mission given by us. The following milestones will give you an idea of how to interact with ROBOTIS’ Turtlebot3 waffle Pi with a Manipulator Arm using the Robot Operating System 2.
+Welcome to CS 4379K / CS 5342. We have prepared a few milestones before the final project, during which you will use a physical robot to execute a mission we provide. The following milestones will give you an idea of how to interact with ROBOTIS’ Turtlebot3 waffle Pi with a Manipulator Arm using the Robot Operating System 2.
 
 The second milestone is about simulating and controlling a robot arm in Gazebo, and controlling the physical turtlebot by running teleoperation, SLAM, and Navigation nodes.
 
@@ -30,7 +30,25 @@ https://opensource.com/article/19/3/getting-started-vim
 
 ### Assignment Requirement
 
-A hardware video demonstration submission is required for Milestone Assignment 2. You need to demonstrate that you have a working setup and can operate a physical turtlebot by making a video. Refer to the demo requirement section at the end of the milestone assignment on what to include in the video. Once your group is done with the video demonstration that satisfies the demo requirement outlined at the end, please submit it to Canvas. Only one member from each group will submit all videos necessary to demonstrate that your group has completed all requirements. Rules for robot usage will apply for working with the physical Turtlebot3. Please refer to the inventory list given to you separately and the rules for the Robot room usage.
+A hardware video demonstration submission is required for Milestone Assignment 2. 
+
+You need to demonstrate that you have a working setup and can operate the turtlebot in simulation by making videos. This will also demonstrate that you have a working setup for working with a physical turtlebot in the next milestone assignment. Refer to the demo requirement section at the end of the milestone assignment on what to include in the video.
+
+**[SUBMISSION RULES]**
+
+* **Individual Submission:** **Every team member must submit the video(s) separately to Canvas.** If the video is duplicated within a team, that is acceptable; however, this ensures that only active participants who have access to the team’s recordings can receive credit. 
+
+* **Standardized Hosting:** **To manage file sizes, do not upload raw video files (e.g., MP4) directly to Canvas.** Instead, **upload your videos to YouTube (set as "Unlisted")** and submit the links via a document.
+
+### Video Demo Requirements
+
+Your group will **record** one or more video clips. The estimated total length of the video clips is approximately two and a half minutes. **While you do not need to perform complex editing, please keep the total duration to a few minutes to ensure it remains concise.** One group member should narrate the video, explaining each step as it's performed. At the beginning of the first video clip, please show every group member's face and state the names of all group members.
+
+Your recording setup should be organized to show all relevant windows at once: the terminal(s) used for launching nodes, the Gazebo simulation window, and the RViz visualization window.
+
+You do not need to edit the videos, and uploading raw **footage** will suffice. You can split the demonstration into multiple videos **if necessary to show different parts of the requirement.** 
+
+Rules for robot usage will apply for working with the physical Turtlebot3. Please refer to the inventory list given to you separately and the rules for the Robot room usage.
 
 > **Change Log**
 > v1.0: Tested on Humble environment
@@ -229,11 +247,8 @@ We will leave you this URL again as a reference for the complete set of navigati
 
 ### Video Demo Requirements (3-Minute Demonstration)
 
-Your group will submit a single or multiple videos (e.g., MP4 format) to demonstrate your progress. One group member should narrate the video, explaining each step as it's performed. At the beginning of the first video clip, please show every group member's face and state the names of all group members.
+Refer to the introduction to the assignment submission requirement.
 
-For the physical robot sections (Parts B and C), your video must show both your computer screen (RViz, terminals) and the physical robot's movement simultaneously. 
-
-You do not need to edit the videos, and uploading raw videos will suffice. You can split the video into multiple videos and submit them separately if the video is too long.  
 The demonstration must clearly show the successful completion of the following four parts in order. 
 
 **Part A: Manipulator Control in RViz**
