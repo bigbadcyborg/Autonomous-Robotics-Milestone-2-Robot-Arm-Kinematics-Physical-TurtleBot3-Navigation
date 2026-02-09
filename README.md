@@ -79,6 +79,7 @@ ros2 topic list
 ```
 
 *Locate the topic named `/joint_states`.*
+
 2. **Echo Topics:** We want to see the real-time data of the robot's arm joints. Run the following command:
 ```bash
 ros2 topic echo /joint_states
