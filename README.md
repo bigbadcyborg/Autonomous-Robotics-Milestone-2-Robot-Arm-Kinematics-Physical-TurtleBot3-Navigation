@@ -23,11 +23,6 @@ For all questions regarding milestone assignments and the robot, **you should co
 
 <https://spring2026txstrobot.slack.com/>
 
-We use vim (vi) for text editing in a terminal environment. Please refer to the tutorial for Vim if you are not familiar with vim environment for editing documents. 
-
-https://opensource.com/article/19/3/getting-started-vim
-
-
 ### Assignment Requirement
 
 A hardware video demonstration submission is required for Milestone Assignment 2. 
@@ -55,27 +50,43 @@ Rules for robot usage will apply for working with the physical Turtlebot3. Pleas
 
 ---
 
-### Part 1: Simulation of the Robotic Arm
+### **Part 1: Simulation of the Robotic Arm and Topic Inspection**
 
-For part 1, we need you to further demonstrate your simulated environment with the operation of a robotic manipulator in the Gazebo simulated environment. This assumes that you have a working setup from Milestone Assignment 1 Part 1. Please execute all instructions with **[Remote PC]** on Docker shell. Note that you have to enable GUI and start the Docker container by following instruction from Milestone Assignment 1. 
+You will simulate the OpenManipulator-X in Gazebo, control it via keyboard teleoperation, and verify the message data structure using `ros2 topic`. Please execute all instructions with **[Remote PC]** on Docker shell. Note that you have to enable GUI and start the Docker container by following instruction from Milestone Assignment 1.
 
-**How to run an Open Manipulator X Arm simulation using RViz**
-
-This tutorial is based on the following manual. Select Humble for the manual specific to ROS2 Humble.
-
-* **(Original URL)** [https://emanual.robotis.com/docs/en/platform/turtlebot3/manipulation/](https://emanual.robotis.com/docs/en/platform/turtlebot3/manipulation/)
-
-**[Remote PC]** To use MoveIt to operate the OpenMANIPULATOR-X in the Gazebo, terminate other Gazebo and RViz tools first.
-
-**[Remote PC]** Enter the command below to launch RViz with MoveIt configuration.
+**[Remote PC]** Terminate any running Gazebo or RViz instances. Enter the command below to launch the Turtlebot3 Manipulation Gazebo environment.
 
 ```bash
-ros2 launch turtlebot3_manipulation_moveit_config moveit_gazebo.launch.py
+ros2 launch turtlebot3_manipulation_gazebo turtlebot3_manipulation_gazebo.launch.py
 
 ```
 
-**[Remote PC]** The MoveIt Interface on RViz will be launched along with the Gazebo simulator. You can move the blue ball to move the location of the gripper in 3d space and click Plan and Execute under motionPlanning -> Planning -> Commands. Play around with parameters such as planning time.
+**[Remote PC]** Open a **second terminal**. We will use the Robotis teleoperation node to control the robot using your keyboard. Run the following command:
 
+```bash
+ros2 run turtlebot3_manipulation_teleop turtlebot3_manipulation_teleop
+
+```
+
+You should see the control menu appear. You can now use the keys (W, A, S, D for the base, and separate keys for joints/gripper) to move the robot in Gazebo.
+
+**[Remote PC]** Open a **third terminal**. Now that the robot is running, we need to inspect the data being published.
+
+1. **List Topics:** Run the following command to see all active topics in the simulation:
+```bash
+ros2 topic list
+
+```
+
+*Locate the topic named `/joint_states`.*
+2. **Echo Topics:** We want to see the real-time data of the robot's arm joints. Run the following command:
+```bash
+ros2 topic echo /joint_states
+
+```
+
+**Activity:** Arrange your windows so you can see the **Teleop Terminal**, the **Gazebo Window**, and the **Topic Echo Terminal** simultaneously.
+When you press keys in the Teleop terminal to move the arm, observe how the `position` values in the `/joint_states` topic change in the third terminal. This verifies that the simulation is correctly publishing the state of the robot.
 ---
 
 ### Part 2: Operation of Physical Turtlebot 3
@@ -263,13 +274,13 @@ Refer to the introduction to the assignment submission requirement.
 
 The demonstration must clearly show the successful completion of the following four parts in order. 
 
-**Part A: Manipulator Control in RViz**
-This part demonstrates your ability to control the simulated manipulator arm using MoveIt and RViz.
+**Part A: Simulation with CLI Tracking**
+**This part demonstrates your ability to control the simulated robot and use ROS 2 CLI tools to track messages.**
 
-* **Launch Simulation:** Start the Gazebo simulation and launch the MoveIt RViz configuration.
-* **Interactive Marker Control:** Use the interactive marker attached to the gripper in RViz to plan and execute several movements. You must demonstrate moving the end-effector up/down, forward/backward, and rotating it around at least one axis.
-* **Gripper Goal State:** Use the "Goal State" dropdown in the MoveIt MotionPlanning panel to command the gripper. Show the successful execution of both the "open" and "close" states.
-* **RViz UI Exploration:** Demonstrate one useful feature of the RViz interface that helps with motion planning. Briefly explain what you are showing.
+* **Launch Simulation:** Start the `turtlebot3_manipulation_gazebo` simulation.
+* **Topic Inspection:** Open a terminal and run `ros2 topic echo /joint_states`. Ensure this terminal is clearly visible in the video.
+* **Teleoperation:** In a separate terminal, use the keyboard teleoperation node to move the robotic arm.
+* **Verification:** Clearly show that as you press keys to move the arm in Gazebo, the values in the `ros2 topic echo` terminal change in real-time. Demonstrate moving at least two different joints.
 
 **Part B: Physical Robot SLAM**
 This section demonstrates mapping a real-world environment with the physical TurtleBot.
