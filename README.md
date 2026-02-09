@@ -70,6 +70,26 @@ ros2 run turtlebot3_manipulation_teleop turtlebot3_manipulation_teleop
 
 You should see the control menu appear. You can now use the keys (W, A, S, D for the base, and separate keys for joints/gripper) to move the robot in Gazebo.
 
+```text
+    Reading from keyboard
+    ---------------------------
+    Joint Control Keys:
+      1/q: Joint1 +/-
+      2/w: Joint2 +/-
+      3/e: Joint3 +/-
+      4/r: Joint4 +/-
+    Use o|p to open/close the gripper.
+    
+    Command Control Keys:
+      i: Move up
+      k: Move down
+      l: Move right
+      j: Move left
+      space bar: Move stop
+    ---------------------------
+    'ESC' to quit.
+```
+
 **[Remote PC]** Open a **third terminal**. Now that the robot is running, we need to inspect the data being published.
 
 1. **List Topics:** Run the following command to see all active topics in the simulation:
