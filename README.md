@@ -87,6 +87,7 @@ ros2 topic echo /joint_states
 
 **Activity:** Arrange your windows so you can see the **Teleop Terminal**, the **Gazebo Window**, and the **Topic Echo Terminal** simultaneously.
 When you press keys in the Teleop terminal to move the arm, observe how the `position` values in the `/joint_states` topic change in the third terminal. This verifies that the simulation is correctly publishing the state of the robot.
+
 ---
 
 ### Part 2: Operation of Physical Turtlebot 3
