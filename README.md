@@ -132,7 +132,7 @@ If you suspect Jetson is not booting up, try reseating the SD card extender on t
 
 Please note that we will not use a Docker environment on Jetson NX to minimize overhead. Execute all instructions tagged with [Turetlebot Jetson] on the Jetson NX terminal window directly.
 
-Refer to the appendix for steps to reflash the SD card if it is corrupt. You can also ask the DIA for assistance in reflashing the SD card.
+Refer to the appendix for optional steps to reflash the SD card yourself if you think it is corrupt. You can also ask the DIA for assistance in reflashing the SD card.
 
 **Jetson user and password for all groups' sd cards**
 
