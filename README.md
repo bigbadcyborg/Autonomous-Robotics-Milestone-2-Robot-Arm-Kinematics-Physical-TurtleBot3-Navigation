@@ -335,7 +335,7 @@ This final part demonstrates autonomous navigation using the map you created.
 
 **[Optional] Nvidia Jeston NX SD Card Setup**
 
-(This SD card preparation step for Jetson NX was already completed by the IA for you. You will receive a flashed, ready-to-go micro SD card for Turtlebot3 operation. However, if your SD card is corrupted, it would be faster to download and reflash the SD card image yourself using step 0.)
+(This SD card preparation step for Jetson NX was already completed by the IA for you. You will receive a flashed, ready-to-go micro SD card for Turtlebot3 operation. However, if your SD card is corrupted, it would be faster to download and reflash the SD card image yourself using this guide.)
 
 **Reflashing the micro SD card**
 
