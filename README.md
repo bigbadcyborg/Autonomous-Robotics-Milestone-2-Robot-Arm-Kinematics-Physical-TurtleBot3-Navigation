@@ -150,7 +150,7 @@ This manual is based on the following manual for Humble.
 
 This manual assumes you have completed Milestone 1 Part 1 on setting up your remote PC.
 
-**[Turtlebot Jetson]****[Remote PC]**  Make sure Jetson is connected to the small router we provided (small_blue_wifi), along with the remote PC (NUC or PC that you configured for milestone assignment 1), so that they stay on the same local network. You should also sync the time for both the remote PC and nvidia Jetson by going through Ubuntu settings.
+**[Turtlebot Jetson][Remote PC]**  Make sure Jetson is connected to the small router we provided (small_blue_wifi), along with the remote PC (NUC or PC that you configured for milestone assignment 1), so that they stay on the same local network. 
 
 **[Turtlebot Jetson]** The following command will bring up the actual TurtleBot3 hardware with OpenMANIPULATOR-X on it. Open a terminal from the TurtleBot3 SBC.
 
@@ -168,7 +168,7 @@ ros2 launch turtlebot3_manipulation_moveit_config moveit_core.launch.py
 
 ```
 
-**[Remote PC]** To operate the robot with the keyboard teleoperation node, the RViz must be terminated. Then launch the servo server node and teleoperation nodes on a separate terminal window.
+**[Remote PC]** To operate the robot with the keyboard teleoperation node, the RViz must be terminated. Then launch the servo server node and teleoperation nodes on a separate docker shell windows.
 
 ```bash
 ros2 launch turtlebot3_manipulation_moveit_config servo.launch.py
@@ -226,14 +226,14 @@ ros2 launch turtlebot3_manipulation_bringup gazebo.launch.py
 
 ```
 
-**[Remote PC]** Launch the slam node using the following command.
+**[Remote PC]** Launch the slam node using the following command on another docker shell.
 
 ```bash
 ros2 launch turtlebot3_manipulation_cartographer cartographer.launch.py
 
 ```
 
-**[Remote PC]** Open two docker shells on Remote PC. Launch the servo server node. Launch the keyboard teleoperation node. Use O, K, L, ; keys to drive the TurtleBot3 platform to create a good “map” of the environment.
+**[Remote PC]** Open two more docker shells on Remote PC. Launch the servo server node. Launch the keyboard teleoperation node. Use O, K, L, ; keys to drive the TurtleBot3 platform to create a good “map” of the environment.
 
 ```bash
 ros2 launch turtlebot3_manipulation_moveit_config servo.launch.py
@@ -351,7 +351,7 @@ There are several ways to burn the image to an SD card. You can use Raspberry Pi
 
 [https://www.raspberrypi.org/software](https://www.raspberrypi.org/software)
 
-In Raspberry Pi Imager, please choose "Use custom" and select "sd-blob.img".
+If using Raspberry Pi Imager, please choose "Use custom" and select "sd-blob.img".
 
 The following is the sudo user name and password for the sd card image provided.
 
