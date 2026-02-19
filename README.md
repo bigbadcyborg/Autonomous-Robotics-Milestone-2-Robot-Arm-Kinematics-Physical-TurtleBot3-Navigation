@@ -54,14 +54,18 @@ Rules for robot usage will apply for working with the physical Turtlebot3. Pleas
 
 You will simulate the OpenManipulator-X in Gazebo, control it via keyboard teleoperation, and verify the message data structure using `ros2 topic`. Please execute all instructions with **[Remote PC]** on Docker shell. Note that you have to enable GUI and start the Docker container by following instruction from Milestone Assignment 1.
 
-**[Remote PC]** Terminate any running Gazebo or RViz instances. Enter the command below to launch the Turtlebot3 Manipulation Gazebo environment.
+**[Remote PC]** Terminate any running Gazebo or RViz instances. Enter the command below on the **first Docker shell** to launch the Turtlebot3 Manipulation Gazebo environment.
 
 ```bash
 ros2 launch turtlebot3_manipulation_gazebo turtlebot3_manipulation_gazebo.launch.py
 
 ```
 
-**[Remote PC]** Open a **second terminal**. We will use the Robotis teleoperation node to control the robot using your keyboard. Run the following command:
+**[Remote PC]** To control the TurtleBot3 in the Gazebo simulation, the servo server node of MoveIt must be launched first. Open a **second Docker shell** by opening another terminal window and entering the container on that terminal window. Type the following command in the new Docker shell.
+
+    ros2 launch turtlebot3_manipulation_moveit_config servo.launch.py
+
+**[Remote PC]** Open a **third docker shell**. We will use the Robotis teleoperation node to control the robot using your keyboard. Run the following command:
 
 ```bash
 ros2 run turtlebot3_manipulation_teleop turtlebot3_manipulation_teleop
@@ -90,7 +94,7 @@ You should see the control menu appear. You can now use the keys (W, A, S, D for
     'ESC' to quit.
 ```
 
-**[Remote PC]** Open a **third terminal**. Now that the robot is running, we need to inspect the data being published.
+**[Remote PC]** Open a **fourth docker shell**. Now that the robot is running, we need to inspect the data being published.
 
 1. **List Topics:** Run the following command to see all active topics in the simulation:
 ```bash
@@ -107,7 +111,7 @@ ros2 topic echo /joint_states
 ```
 
 **Activity:** Arrange your windows so you can see the **Teleop Terminal**, the **Gazebo Window**, and the **Topic Echo Terminal** simultaneously.
-When you press keys in the Teleop terminal to move the arm, observe how the `position` values in the `/joint_states` topic change in the third terminal. This verifies that the simulation is correctly publishing the state of the robot.
+When you press keys in the Teleop terminal to move the arm, observe how the `position` values in the `/joint_states` topic change in the fourth docker shell. 
 
 ---
 
@@ -115,11 +119,13 @@ When you press keys in the Teleop terminal to move the arm, observe how the `pos
 
 For part 2, we need you to demonstrate your ability to interface with the Physical Turtlebot by running Teleoperation, SLAM, and Navigation nodes. We will start by working with the robot plugged into the wall instead of using the battery. You need to make sure not to confuse which power adapter goes where.
 
-1. Power up the turtlebot by plugging in 12V power to the turtlebot3’s front OpenCR board and turning on the power switch next to the power jack. The Turtlebot should power up.
+**For more information on Turtlebot 3, please refer to lab 1 and lab 2 powerpoint materials on Canvas.**
+
+1. Power up the turtlebot by plugging in **12V power** to the turtlebot3’s front OpenCR board and **turning on the power switch** next to the power jack. The Turtlebot should power up. **Make sure you plug correct power supply to correct board**
 2. The green LED on the OpenCR board will light up, and the motors on the wheels and robot arm will start to feel stiff.
 3. Plug in your group’s microSD card to the micro SD extender, which is connected to the Nvidia Jetson at the back of the turtlebot.
-4. Plug in the power jack for the Nvidia Jetson.
-5. Nvidia Jetson will start to emit green light, and the lidar sensor, which is connected to the Jetson’s USB port, should start spinning. If not, most likely it is not reading the SD card. Go to step 5.
+4. Plug in the **19v power jack** for the Nvidia Jetson.
+5. Nvidia Jetson will start to emit green light, and the lidar sensor, which is connected to the Jetson’s USB port, should start spinning. If not, most likely it is not reading the SD card. You might need to reseat the microsd extender to jetson nx's back. Reseat the extender and sd card and go back to step 3.
 6. You may then interface with Nvidia Jetson by plugging in hdmi and usb c cable between Jetson and Flipbook (Laptop-like portable monitor + keyboard battery unit).
 
 If you suspect Jetson is not booting up, try reseating the SD card extender on the Nvidia Jetson and put the power jack back in to reboot the Jetson. Otherwise, you can try to bypass SD card extender and directly insert the SD card into the Jetson.
@@ -128,7 +134,7 @@ Please note that we will not use a Docker environment on Jetson NX to minimize o
 
 Refer to the appendix for steps to reflash the SD card if it is corrupt. You can also ask the DIA for assistance in reflashing the SD card.
 
-**Jetson sudo**
+**Jetson user and password for all groups' sd cards**
 
 ```text
 User: nvidia
@@ -136,7 +142,7 @@ Password: nvidia
 
 ```
 
-#### Teleoperation
+#### Teleoperation on Physical Turtlebot 
 
 This manual is based on the following manual for Humble.
 
@@ -155,7 +161,7 @@ ros2 launch turtlebot3_manipulation_bringup hardware.launch.py
 
 ```
 
-**[Remote PC]** Enter the command below to launch MoveIt on RViz.
+**[Remote PC]** Enter the command below on Docker shell to launch MoveIt on RViz.
 
 ```bash
 ros2 launch turtlebot3_manipulation_moveit_config moveit_core.launch.py
@@ -213,7 +219,7 @@ ros2 launch turtlebot3_manipulation_bringup hardware.launch.py
 
 ```
 
-**[Remote PC]** Open a terminal on Remote PC. Launch the slam node using the following command.
+**[Remote PC]** Open a Docker shell on Remote PC. Launch the slam node using the following command.
 
 ```bash
 ros2 launch turtlebot3_manipulation_bringup gazebo.launch.py
@@ -227,7 +233,7 @@ ros2 launch turtlebot3_manipulation_cartographer cartographer.launch.py
 
 ```
 
-**[Remote PC]** Open two terminals on Remote PC. Launch the servo server node. Launch the keyboard teleoperation node. Use O, K, L, ; keys to drive the TurtleBot3 platform to create a good “map” of the environment.
+**[Remote PC]** Open two docker shells on Remote PC. Launch the servo server node. Launch the keyboard teleoperation node. Use O, K, L, ; keys to drive the TurtleBot3 platform to create a good “map” of the environment.
 
 ```bash
 ros2 launch turtlebot3_manipulation_moveit_config servo.launch.py
@@ -235,7 +241,7 @@ ros2 run turtlebot3_manipulation_teleop turtlebot3_manipulation_teleop
 
 ```
 
-**[Remote PC]** Open a new terminal on Remote PC. Run the nav2_map_server to save the current map on RViz.
+**[Remote PC]** Open a new docker shell on Remote PC. Run the nav2_map_server to save the current map on RViz.
 
 ```bash
 ros2 run nav2_map_server map_saver_cli -f ~/map
@@ -265,7 +271,7 @@ ros2 launch turtlebot3_manipulation_bringup hardware.launch.py
 
 ```
 
-**[Remote PC]** Open a terminal on Remote PC. Launch the navigation file using the following command. Note that you are referring to the map.yaml file created in the previous step for SLAM.
+**[Remote PC]** Open a docker shell on Remote PC. Launch the navigation file using the following command. Note that you are referring to the map.yaml file created in the previous step for SLAM.
 
 ```bash
 ros2 launch turtlebot3_manipulation_navigation2 navigation2.launch.py map_yaml_file:=$HOME/map.yaml
@@ -297,7 +303,7 @@ Refer to the introduction to the assignment submission requirement.
 The demonstration must clearly show the successful completion of the following four parts in order. 
 
 **Part A: Simulation with CLI Tracking**
-**This part demonstrates your ability to control the simulated robot and use ROS 2 CLI tools to track messages.**
+This first part demonstrates your ability to control the simulated robot and use ROS 2 CLI tools to track messages.
 
 * **Launch Simulation:** Start the `turtlebot3_manipulation_gazebo` simulation.
 * **Topic Inspection:** Open a terminal and run `ros2 topic echo /joint_states`. Ensure this terminal is clearly visible in the video.
@@ -305,7 +311,7 @@ The demonstration must clearly show the successful completion of the following f
 * **Verification:** Clearly show that as you press keys to move the arm in Gazebo, the values in the `ros2 topic echo` terminal change in real-time. Demonstrate moving at least two different joints.
 
 **Part B: Physical Robot SLAM**
-This section demonstrates mapping a real-world environment with the physical TurtleBot.
+This second part demonstrates mapping a real-world environment with the physical TurtleBot.
 
 * **Launch Nodes:** Bring up the physical robot hardware and launch the appropriate SLAM and teleoperation nodes on your remote PC.
 * **Map the Environment:** Use the keyboard teleoperation node to drive the TurtleBot around a physical space. The area you map should contain at least two distinct obstacles (e.g., a table and a trash can).
