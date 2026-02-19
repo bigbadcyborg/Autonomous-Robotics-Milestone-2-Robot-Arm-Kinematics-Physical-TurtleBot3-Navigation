@@ -72,7 +72,7 @@ ros2 run turtlebot3_manipulation_teleop turtlebot3_manipulation_teleop
 
 ```
 
-You should see the control menu appear. You can now use the keys (W, A, S, D for the base, and separate keys for joints/gripper) to move the robot in Gazebo.
+You should see the control menu appear. You can now use the keys (i,k,l,j for the base, and separate keys for joints/gripper) to move the robot in Gazebo.
 
 ```text
     Reading from keyboard
@@ -179,7 +179,7 @@ ros2 run turtlebot3_manipulation_teleop turtlebot3_manipulation_teleop
 
 ```
 
-The following keys are used to control the TurtleBot3. Try moving the turtlebot in the physical space. Use O, K, L, ; keys to drive the TurtleBot3 platform.
+The following keys are used to control the TurtleBot3. Try moving the turtlebot in the physical space. 
 
 ```text
     Reading from keyboard
