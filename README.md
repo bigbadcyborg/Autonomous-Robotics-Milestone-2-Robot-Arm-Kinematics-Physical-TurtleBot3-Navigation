@@ -172,6 +172,9 @@ ros2 launch turtlebot3_manipulation_moveit_config moveit_core.launch.py
 
 ```bash
 ros2 launch turtlebot3_manipulation_moveit_config servo.launch.py
+```
+
+```bash
 ros2 run turtlebot3_manipulation_teleop turtlebot3_manipulation_teleop
 
 ```
@@ -237,6 +240,8 @@ ros2 launch turtlebot3_manipulation_cartographer cartographer.launch.py
 
 ```bash
 ros2 launch turtlebot3_manipulation_moveit_config servo.launch.py
+```
+```bash
 ros2 run turtlebot3_manipulation_teleop turtlebot3_manipulation_teleop
 
 ```
