@@ -165,14 +165,14 @@ ros2 launch turtlebot3_manipulation_bringup hardware.launch.py
 
 ```
 
-**[Remote PC]** Enter the command below on Docker shell to launch MoveIt on RViz.
+**[Remote PC]** Enter the command below on Docker shell to launch MoveIt on RViz. You can play around in Rviz to better understand how robot arm planning works. Move blue ball around and press "plan" and "execute" buttons on the bottom left of the screen under "motion planning->planning" .
 
 ```bash
 ros2 launch turtlebot3_manipulation_moveit_config moveit_core.launch.py
 
 ```
 
-**[Remote PC]** To operate the robot with the keyboard teleoperation node, the RViz must be terminated. Then launch the servo server node and teleoperation nodes on a separate docker shell windows.
+**[Remote PC]** To operate the robot with the keyboard teleoperation node, the RViz must be terminated. Then launch the servo server node and teleoperation nodes on a separate docker shell window.
 
 ```bash
 ros2 launch turtlebot3_manipulation_moveit_config servo.launch.py
@@ -226,21 +226,15 @@ ros2 launch turtlebot3_manipulation_bringup hardware.launch.py
 
 ```
 
-**[Remote PC]** Open a Docker shell on Remote PC. Launch the slam node using the following command.
 
-```bash
-ros2 launch turtlebot3_manipulation_bringup gazebo.launch.py
-
-```
-
-**[Remote PC]** Launch the slam node using the following command on another docker shell.
+**[Remote PC]** Launch the slam node using the following command on a docker shell on Remote PC.
 
 ```bash
 ros2 launch turtlebot3_manipulation_cartographer cartographer.launch.py
 
 ```
 
-**[Remote PC]** Open two more docker shells on Remote PC. Launch the servo server node. Launch the keyboard teleoperation node. Use O, K, L, ; keys to drive the TurtleBot3 platform to create a good “map” of the environment.
+**[Remote PC]** Open two more docker shells on Remote PC. Launch the servo server node. Launch the keyboard teleoperation node. Drive the TurtleBot3 platform to create a good “map” of the environment.
 
 ```bash
 ros2 launch turtlebot3_manipulation_moveit_config servo.launch.py
@@ -257,7 +251,7 @@ ros2 run nav2_map_server map_saver_cli -f ~/map
 
 ```
 
-**[Remote PC]** Refer to the previous assignment’s tuning guide to tune your map, should you find it necessary while performing steps on navigation.
+**[Optional][Remote PC]** Refer to the previous assignment’s tuning guide to tune your map, should you find it necessary while performing steps on navigation.
 
 #### Navigation
 
@@ -299,7 +293,7 @@ As soon as x, y, and targets are set, TurtleBot3 will start moving to the destin
 
 Recall from SLAM that you can tune SLAM parameters. You can tune Navigation parameters as well by modifying the appropriate YAML file.
 
-We will leave you this URL again as a reference for the complete set of navigation parameters, just like we did for Assignment 1:
+**[Optional][Remote_PC]** We will leave you this URL again as a optional reference for the complete set of navigation parameters, just like we did for Assignment 1. **Please note that some parameter changes might break the software.**
 
 [https://emanual.robotis.com/docs/en/platform/turtlebot3/navigation/#navigation](https://emanual.robotis.com/docs/en/platform/turtlebot3/navigation/#navigation)
 
@@ -311,7 +305,7 @@ Refer to the introduction to the assignment submission requirement.
 
 The demonstration must clearly show the successful completion of the following four parts in order. 
 
-**Part A: Simulation with CLI Tracking**
+**Part A: Simulation with ROS2 CLI Tracking**
 This first part demonstrates your ability to control the simulated robot and use ROS 2 CLI tools to track messages.
 
 * **Launch Simulation:** Start the `turtlebot3_manipulation_gazebo` simulation.
