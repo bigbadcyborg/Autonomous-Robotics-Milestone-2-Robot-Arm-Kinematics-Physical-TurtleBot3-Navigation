@@ -121,18 +121,22 @@ For part 2, we need you to demonstrate your ability to interface with the Physic
 
 **For more information on Turtlebot 3, please refer to lab 1 and lab 2 powerpoint materials on Canvas.**
 
-1. Power up the turtlebot by plugging in **12V power** to the turtlebot3’s front OpenCR board and **turning on the power switch** next to the power jack. The Turtlebot should power up. **Make sure you plug correct power supply to correct board**
+1. Power up the turtlebot by plugging in **12V power** to the turtlebot3’s front OpenCR board and **turning on the power switch** next to the power jack. The Turtlebot should power up. **Make sure you plug correct power supply to correct board**. We have **color coded the power jacks so that white 12V plugs to the front and yellow 19v supply plugs to the back**.
 2. The green LED on the OpenCR board will light up, and the motors on the wheels and robot arm will start to feel stiff.
 3. Plug in your group’s microSD card to the micro SD extender, which is connected to the Nvidia Jetson at the back of the turtlebot.
 4. Plug in the **19v power jack** for the Nvidia Jetson.
 5. Nvidia Jetson will start to emit green light, and the lidar sensor, which is connected to the Jetson’s USB port, should start spinning. If not, most likely it is not reading the SD card. You might need to reseat the microsd extender to jetson nx's back. Reseat the extender and sd card and go back to step 3.
 6. You may then interface with Nvidia Jetson by plugging in hdmi and usb c cable between Jetson and Flipbook (Laptop-like portable monitor + keyboard battery unit).
 
-If you suspect Jetson is not booting up, try reseating the SD card extender on the Nvidia Jetson and put the power jack back in to reboot the Jetson. Otherwise, you can try to bypass SD card extender and directly insert the SD card into the Jetson.
-
 Please note that we will not use a Docker environment on Jetson NX to minimize overhead. Execute all instructions tagged with [Turetlebot Jetson] on the Jetson NX terminal window directly.
 
 Refer to the appendix for optional steps to reflash the SD card yourself if you think it is corrupt. You can also ask the DIA for assistance in reflashing the SD card.
+
+**Self help steps**
+
+If you suspect Jetson is not booting up, try reseating the SD card extender on the Nvidia Jetson and put the power jack back in to reboot the Jetson. Otherwise, you can try to bypass SD card extender and directly insert the SD card into the Jetson.
+
+If you do not feel motors on the turtlebot 3 to be stiff and if it does not respond to your commands later on the assignment, you might have reversed step 3 and 1 and have boot jetson first followed by turtlebot3's opencr. When that happens, openCR will power off of USB port instead of 12V, and will not be able to drive the motors.In that case, we recommend shutting both computers down and restarting from step 1.
 
 **Jetson user and password for all groups' sd cards**
 
