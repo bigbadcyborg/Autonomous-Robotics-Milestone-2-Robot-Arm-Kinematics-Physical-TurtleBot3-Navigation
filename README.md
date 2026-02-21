@@ -6,7 +6,7 @@
 
 ### Introduction
 
-Welcome to CS 4379K / CS 5342. We have prepared a few milestones before the final project, during which you will use a physical robot to execute a mission we provide. The following milestones will give you an idea of how to interact with ROBOTIS’ Turtlebot3 waffle Pi with a Manipulator Arm using the Robot Operating System 2.
+Welcome to CS 4379K / CS 5342. This assignment will give you an idea of how to interact with ROBOTIS’ Turtlebot3 waffle Pi with a Manipulator Arm using the Robot Operating System 2.
 
 The second milestone is about simulating and controlling a robot arm in Gazebo, and controlling the physical turtlebot by running teleoperation, SLAM, and Navigation nodes.
 
