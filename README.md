@@ -57,7 +57,7 @@ You will simulate the OpenManipulator-X in Gazebo, control it via keyboard teleo
 **[Remote PC]** Terminate any running Gazebo or RViz instances. Enter the command below on the **first Docker shell** to launch the Turtlebot3 Manipulation Gazebo environment.
 
 ```bash
-ros2 launch turtlebot3_manipulation_gazebo turtlebot3_manipulation_gazebo.launch.py
+ros2 launch turtlebot3_manipulation_gazebo gazebo.launch.py
 
 ```
 
