@@ -133,11 +133,11 @@ Please note that we will not use a Docker environment on Jetson NX to minimize o
 Refer to the appendix for optional steps to reflash the SD card yourself if you think it is corrupt. You can also ask the DIA for assistance in reflashing the SD card.
 
 **Self-help steps**
-
+```text
 If you suspect Jetson is not booting up, most likely its bad connection with the micro SD card. Unplug the power, try reseating the SD card extender on the Nvidia Jetson, and put the power jack back in to reboot the Jetson. Otherwise, you can try to bypass the SD card extender and directly insert the SD card into the Jetson.
 
 If you do not feel the motors on the turtlebot 3 to be stiff and if it does not respond to your commands later on the assignment, you might have reversed step 3 and 1 and have boot jetson first followed by turtlebot3's opencr. When that happens, openCR will power off the USB port instead of 12V, and will not be able to drive the motors. In that case, we recommend shutting both computers down and restarting from step 1.
-
+```
 **Jetson user and password for all groups' sd cards**
 
 ```text
@@ -168,9 +168,9 @@ Do not press the reset button on the router just because you have trouble connec
 ```
 
 **Self-help steps**
-
+```text
 If you have networking issues when both wired and wireless are connected, disable one network interface so that Ubuntu understands where to send the internet packets and where to send local network packets.
-
+```
 **[Turtlebot Jetson]** The following command will bring up the actual TurtleBot3 hardware with OpenMANIPULATOR-X on it. Open a terminal from the TurtleBot3 SBC.
 
 Bring up the TurtleBot3 Manipulation using the following command.
