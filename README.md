@@ -154,7 +154,18 @@ This manual is based on the following manual for Humble.
 
 This manual assumes you have completed Milestone 1 Part 1 on setting up your remote PC.
 
-**[Turtlebot Jetson][Remote PC]**  Make sure Jetson is connected to the small router we provided (small_blue_wifi), along with the remote PC (Acer Laptop or PC that you configured for milestone assignment 1), so that they stay on the same local network. 
+**[Turtlebot Jetson][Remote PC]**  Make sure Jetson is connected to the small router we provided (small_blue_wifi), along with the remote PC (Acer Laptop or PC that you configured for milestone assignment 1), so that they stay on the same local network. Do not attempt to change the router settings because you suspect something on your own.
+
+```text
+SSID: small_blue_wifi
+Password: turtlebot
+
+Your Remote PC does not need sudo to connect to this network because it is a remembered network. 
+```
+
+**Self-help steps**
+
+If you have networking issues when both wired and wireless are connected, disable one network interface so that Ubuntu understands where to send the internet packets and where to send local network packets.
 
 **[Turtlebot Jetson]** The following command will bring up the actual TurtleBot3 hardware with OpenMANIPULATOR-X on it. Open a terminal from the TurtleBot3 SBC.
 
