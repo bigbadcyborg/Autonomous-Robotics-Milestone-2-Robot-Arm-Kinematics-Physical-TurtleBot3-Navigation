@@ -160,7 +160,11 @@ This manual assumes you have completed Milestone 1 Part 1 on setting up your rem
 SSID: small_blue_wifi
 Password: turtlebot
 
-Your Remote PC does not need sudo to connect to this network because it is a remembered network. 
+This network does not have internet access.
+
+Your Remote PC does not need sudo to connect to this network because it is a remembered network.
+
+Do not press the reset button on the router just because you have trouble connecting to this network.
 ```
 
 **Self-help steps**
