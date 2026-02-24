@@ -1,6 +1,6 @@
 # 2026 CS 4379K / CS 5342 Introduction to Autonomous Robotics, Robotics and Autonomous Systems
 
-## Programming Assignment: Milestone 2 (V1.0)
+## Programming Assignment: Milestone 2 (V1.05)
 
 **Minhyuk Park and Tsz-Chiu Au**
 
@@ -46,6 +46,7 @@ You do not need to edit the videos, and uploading raw **footage** will suffice. 
 Rules for robot usage will apply for working with the physical Turtlebot3. Please refer to the inventory list given to you separately and the rules for the Robot room usage.
 
 > **Change Log**
+> v1.05: Additional help on network configuration
 > v1.0: Tested on Humble environment
 
 ---
