@@ -170,8 +170,9 @@ Do not press the reset button on the router just because you have trouble connec
 
 **Self-help steps**
 ```text
-If you have networking issues when both wired and wireless are connected, disable one network interface so that Ubuntu understands where to send the internet packets and where to send local network packets.
+If you have networking issues when both wired and wireless are connected, (i.e. Ubuntu laptop is redirecting to asus router page and cannot access internet even though wired ethernet cable is connected to the laptop) try disable one network interface so that Ubuntu understands where to send the internet packets and where to send local network packets.
 ```
+
 **[Turtlebot Jetson]** The following command will bring up the actual TurtleBot3 hardware with OpenMANIPULATOR-X on it. Open a terminal from the TurtleBot3 SBC.
 
 Bring up the TurtleBot3 Manipulation using the following command.
