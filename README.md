@@ -1,6 +1,6 @@
-# 2026 CS 4379K / CS 5342 Introduction to Autonomous Robotics, Robotics and Autonomous Systems
-
 Demo: https://www.youtube.com/watch?v=CQuNqRRFaXM
+
+# 2026 CS 4379K / CS 5342 Introduction to Autonomous Robotics, Robotics and Autonomous Systems
 
 ## Programming Assignment: Milestone 2 (V1.05)
 
