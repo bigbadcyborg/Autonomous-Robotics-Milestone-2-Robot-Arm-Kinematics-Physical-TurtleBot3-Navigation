@@ -1,5 +1,7 @@
 # 2026 CS 4379K / CS 5342 Introduction to Autonomous Robotics, Robotics and Autonomous Systems
 
+Demo: https://www.youtube.com/watch?v=CQuNqRRFaXM
+
 ## Programming Assignment: Milestone 2 (V1.05)
 
 **Russell Sullivan, Minhyuk Park, and Tsz-Chiu Au**
