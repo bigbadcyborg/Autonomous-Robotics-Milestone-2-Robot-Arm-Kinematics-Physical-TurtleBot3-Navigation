@@ -2,7 +2,7 @@
 
 ## Programming Assignment: Milestone 2 (V1.05)
 
-**Minhyuk Park and Tsz-Chiu Au**
+**Russell Sullivan, Minhyuk Park, and Tsz-Chiu Au**
 
 ### Introduction
 
